@@ -1,0 +1,24 @@
+# Python
+*.pyc
+__pycache__
+
+# PyPi
+dist/
+build/
+MANIFEST
+
+# Emacs
+*~
+#*#
+
+# Vim
+*.swp
+
+# Unit tests
+.tox
+
+# Virtualenvs
+.envs
+
+# Database
+src/fragment/db.sqlite3

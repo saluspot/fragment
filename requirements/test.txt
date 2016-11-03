@@ -1,0 +1,4 @@
+-r base.txt
+
+# ipython debugger
+ipdb>=0.10.0,<0.10.99

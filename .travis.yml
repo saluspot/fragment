@@ -1,0 +1,25 @@
+language: python
+sudo: false
+env:
+    - TOX_ENV=py35-django19
+    - TOX_ENV=py34-django19
+    - TOX_ENV=py27-django19
+    - TOX_ENV=py35-django110
+    - TOX_ENV=py34-django110
+    - TOX_ENV=py27-django110
+    - TOX_ENV=py35-django111
+    - TOX_ENV=py34-django111
+    - TOX_ENV=py27-django111
+matrix:
+    fast_finish: true
+    allow_failures:
+      - env: TOX_ENV=py27-django111
+      - env: TOX_ENV=py34-django111
+      - env: TOX_ENV=py35-django111
+install:
+    # Virtualenv < 14 for python 3.2 build
+    - pip install tox "virtualenv<14"
+script:
+    - tox -e $TOX_ENV
+notifications:
+    email: false
